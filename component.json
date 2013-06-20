@@ -1,0 +1,18 @@
+{
+  "name": "xhr",
+  "version": "0.0.0",
+  "description": "Make requests to a server using XMLHttpRequest.",
+  "repo": "anchorjs/xhr",
+  "main": "main.js",
+  "scripts": [
+    "main.js",
+    "lib/errors/xhrerror.js",
+    "lib/request.js",
+    "lib/response.js"
+  ],
+  "dependencies": {
+    "anchorjs/class": "*",
+    "anchorjs/events": "*"
+  },
+  "license": "MIT"
+}
