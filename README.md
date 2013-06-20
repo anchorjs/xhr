@@ -1,22 +1,24 @@
-# Anchor/Ajax
+# Anchor/XHR
 
-The ajax module implements support for making HTTP requests using XHR.
+The xhr module implements support for making HTTP requests using XMLHttpRequest.
 
 ## Install
 
+##### component
+
+    $ component install anchorjs/xhr
+
 ##### volo
 
-    $ volo add anchorjs/ajax
-
-For more information on using volo to manage JavaScript modules, visit [http://volojs.org/](http://volojs.org/).
+    $ volo add anchorjs/xhr
 
 ## Usage
 
-`ajax.request()` returns an instance of `Request`.  If one needs to upload data
+`xhr.request()` returns an instance of `Request`.  If one needs to upload data
 with a POST request:
 
 ```javascript
-var req = ajax.request('/upload', 'POST', function(res) {
+var req = xhr.request('/upload', 'POST', function(res) {
   res.on('end', function() {
     console.log('STATUS: ' + res.statusCode);
     console.log('HEADERS: ' + JSON.stringify(res.headers));
@@ -32,42 +34,36 @@ req.send('data\n');
 ```
 
 Since most requests are GET requests without bodies, Anchor provides `get()` as
-a convenience method.  The only difference between this method and `ajax.request()`
+a convenience method.  The only difference between this method and `xhr.request()`
 is that it sets the method to GET and calls `req.send()` automatically.
 
 ```javascript
-ajax.get("/user.json", function(res) {
+xhr.get("/user.json", function(res) {
   console.log("Got response: " + res.statusCode);
 }).on('error', function(e) {
   console.log("Got error: " + e.message);
 });
 ```
 
-## Implements
+## Compatibility
 
-The API exposed by this module bears a superficial resemblance to the interface
-exported by Node's [HTTP](http://nodejs.org/api/http.html) module.  However,
-there are important distinctions that cause incompatibilities.  In particular,
-the stream interface is not supported by this module because the underlying XHR
-object hosted by the browser is not capable of streaming data.
+##### component
 
-Developers are advised to be aware of the differences between XHR requests and
-regular HTTP requests and implement accordingly.
+This module uses the [AMD](https://github.com/amdjs/amdjs-api) format.  To
+include in component builds, use [component-amd](https://github.com/jaredhanson/component-amd):
+
+    component build -u component-amd
 
 ## Tests
-
-##### Browser
 
 To run tests in a browser, execute the Make target for the desired browser:
 
     $ make test-chrome
     $ make test-firefox
     $ make test-safari
-
-##### PhantomJS
-
-To run headless tests from a terminal using [PhantomJS](http://phantomjs.org/):
-
+    
+Headless tests can be executed directly from a terminal:
+    
     $ make test-phantomjs
 
 ## Credits
@@ -78,4 +74,4 @@ To run headless tests from a terminal using [PhantomJS](http://phantomjs.org/):
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2012 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2012-2013 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
