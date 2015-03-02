@@ -13,6 +13,10 @@
   },
   "license": "MIT",
   "main": "main.js",
+  "dependencies": {
+    "class": "git://github.com/anchorjs/class.git",
+    "events": "git://github.com/anchorjs/events.git"
+  },
   "ignore": [
     ".gitignore",
     ".jshintrc",
