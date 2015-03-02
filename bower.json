@@ -1,0 +1,21 @@
+{
+  "name": "xhr",
+  "version": "0.0.0",
+  "description": "Make requests to a server using XMLHttpRequest.",
+  "authors": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "homepage": "http://www.jaredhanson.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anchorjs/xhr.git"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "ignore": [
+    ".gitignore",
+    ".jshintrc",
+    "test"
+  ]
+}
