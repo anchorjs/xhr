@@ -16,6 +16,10 @@
   "ignore": [
     ".gitignore",
     ".jshintrc",
+    "Makefile",
+    "README.md",
+    "component.json",
+    "package.json",
     "test"
   ]
 }
