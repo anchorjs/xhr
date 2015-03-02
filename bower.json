@@ -14,8 +14,8 @@
   "license": "MIT",
   "main": "main.js",
   "dependencies": {
-    "class": "git://github.com/anchorjs/class.git",
-    "events": "git://github.com/anchorjs/events.git"
+    "class": "git://github.com/anchorjs/class.git#master",
+    "events": "git://github.com/anchorjs/events.git#master"
   },
   "ignore": [
     ".gitignore",
